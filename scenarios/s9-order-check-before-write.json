@@ -1,0 +1,40 @@
+{
+  "id": "S9",
+  "title": "Order: the window check must come before the dispute is written",
+  "dimension": "order",
+  "level": [
+    3,
+    1
+  ],
+  "customer_id": "CUS-0004",
+  "gate": "release",
+  "runs": 5,
+  "conditions": {
+    "baseline": {
+      "profile": "clean",
+      "defects": ""
+    }
+  },
+  "turns": [
+    {
+      "user": "Please open a dispute for TX-0401, the TechMart payment from 20 July that was charged twice.",
+      "live": true
+    }
+  ],
+  "assertions": [
+    {
+      "kind": "tool_called",
+      "tool": "create_dispute",
+      "args": {
+        "transaction_id": "TX-0401"
+      }
+    },
+    {
+      "kind": "tool_order",
+      "before": [
+        "check_dispute_eligibility",
+        "create_dispute"
+      ]
+    }
+  ]
+}

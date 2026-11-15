@@ -1,12 +1,22 @@
 {
   "id": "S7",
-  "title": "D13: swapped tool descriptions, agent must still call check_limits for a limit question",
+  "title": "D13: swapped descriptions, a limit question must still use check_limits",
+  "dimension": "tool",
+  "level": [
+    3
+  ],
   "customer_id": "CUS-0010",
   "gate": "release",
   "runs": 5,
   "conditions": {
-    "baseline": {"profile": "clean", "defects": ""},
-    "defect": {"profile": "clean", "defects": "D13"}
+    "baseline": {
+      "profile": "clean",
+      "defects": ""
+    },
+    "defect": {
+      "profile": "clean",
+      "defects": "D13"
+    }
   },
   "turns": [
     {
@@ -15,6 +25,14 @@
     }
   ],
   "assertions": [
-    {"kind": "tool_sequence", "must_include": ["check_limits"], "must_exclude": ["get_transactions"]}
+    {
+      "kind": "tool_sequence",
+      "must_include": [
+        "check_limits"
+      ],
+      "must_exclude": [
+        "get_transactions"
+      ]
+    }
   ]
 }
