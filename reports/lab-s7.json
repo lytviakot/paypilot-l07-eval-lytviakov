@@ -1,0 +1,301 @@
+[
+ {
+  "scenario": "S7",
+  "condition": "baseline",
+  "settings": {
+   "profile": "clean",
+   "defects": ""
+  },
+  "runs": [
+   {
+    "run": 1,
+    "live_step": 1,
+    "passed": true,
+    "verdicts": [
+     {
+      "kind": "tool_sequence",
+      "ok": true,
+      "detail": "tools ['get_account', 'check_limits']"
+     }
+    ],
+    "answer": "Yes, based on your limits and balance, a EUR 4,500 transfer should go through today.\n\n- **Daily limit (tier 3):** EUR 100,000. Spent today: EUR 4,914. Remaining: EUR 95,086.\n- **Monthly limit (tier 3):** EUR 1,000,000. Spent this month: EUR 35,334. Remaining: EUR 964,666.\n- **Balance:** Your GBP account (ACC-1011) holds GBP 61,200.00, which covers the transfer. Your account is in GBP, so the EUR amount will be converted at the applicable rate.\n\nI can get an exact FX quote showing the GBP amount, the rate and the spread before you proceed. I can't initiate transfers myself, so the transfer itself would need to be submitted through your usual Verta channel.",
+    "tools": [
+     "get_account",
+     "check_limits"
+    ],
+    "model_calls": 3,
+    "cache_read": [
+     2514,
+     2514,
+     2514
+    ],
+    "cost_usd": 0.000484,
+    "mock_answered": 0,
+    "mock_seen": 3
+   },
+   {
+    "run": 2,
+    "live_step": 1,
+    "passed": true,
+    "verdicts": [
+     {
+      "kind": "tool_sequence",
+      "ok": true,
+      "detail": "tools ['get_account', 'check_limits', 'quote_fx']"
+     }
+    ],
+    "answer": "Yes, based on your limits and balance, a EUR 4,500 transfer is within what you can send today. I can't initiate transfers myself, so this is a check, not a booking.\n\n**Limits (tier 3, as of 2026-09-15)**\n- Daily: EUR 95,086 remaining of EUR 100,000\n- Monthly: EUR 964,666 remaining of EUR 1,000,000\n\n**Balance:** GBP 61,200.00 on account ACC-1011.\n\n**Conversion, if the transfer is EUR 4,500 converted to GBP**\n- Mid rate: 0.854701 GBP per EUR\n- Gross: EUR 4,500 × 0.854701 = GBP 3,846.15\n- Spread (0.5%): −GBP 19.23\n- Free allowance: not applied. Your free allowance of EUR 5,000 was already used before this transfer (EUR 15,000 used), so the spread applies in full.\n- Final amount: **GBP 3,826.92**\n\nIf you're sending the EUR amount to a payee, the conversion above is the cost to you. Would you like me to check anything else, such as recent transactions?",
+    "tools": [
+     "get_account",
+     "check_limits",
+     "quote_fx"
+    ],
+    "model_calls": 4,
+    "cache_read": [
+     2514,
+     2514,
+     2514,
+     2514
+    ],
+    "cost_usd": 0.000975,
+    "mock_answered": 0,
+    "mock_seen": 4
+   },
+   {
+    "run": 3,
+    "live_step": 1,
+    "passed": true,
+    "verdicts": [
+     {
+      "kind": "tool_sequence",
+      "ok": true,
+      "detail": "tools ['get_account', 'check_limits']"
+     }
+    ],
+    "answer": "Yes, based on your limits, a EUR 4,500 transfer fits within today's allowance.\n\n- **Daily limit (tier 3):** EUR 100,000. Spent today: EUR 4,914. Remaining: EUR 95,086.\n- **Monthly limit (tier 3):** EUR 1,000,000. Spent this month: EUR 35,334. Remaining: EUR 964,666.\n- **Balance:** Your account ACC-1011 holds GBP 61,200, so it covers the transfer. Your account is in GBP, so a EUR transfer involves a currency conversion.\n\nI can get a full FX quote showing the exchange rate, spread and final GBP amount for EUR 4,500 if you'd like. I can't confirm from here that the transfer itself will process, since I don't have a tool to submit transfers.",
+    "tools": [
+     "get_account",
+     "check_limits"
+    ],
+    "model_calls": 3,
+    "cache_read": [
+     2514,
+     2514,
+     2514
+    ],
+    "cost_usd": 0.000539,
+    "mock_answered": 0,
+    "mock_seen": 3
+   },
+   {
+    "run": 4,
+    "live_step": 1,
+    "passed": true,
+    "verdicts": [
+     {
+      "kind": "tool_sequence",
+      "ok": true,
+      "detail": "tools ['get_account', 'check_limits']"
+     }
+    ],
+    "answer": "Yes, based on your limits, a EUR 4,500 transfer fits within today's allowance.\n\n- **Tier:** tier3\n- **Daily limit:** EUR 100,000, with EUR 4,914 already used today, leaving **EUR 95,086** available.\n- **Monthly limit:** EUR 1,000,000, with EUR 35,334 used, leaving **EUR 964,666** available.\n- **Balance:** Your account ACC-1011 holds **GBP 61,200**, so it covers the transfer. Because the account is in GBP and the transfer is in EUR, the amount will be converted. I can get an exact FX quote for EUR 4,500 if you'd like to see the rate, spread and final GBP amount before you send.\n\nI can't see the status of any pending or scheduled payment, so if the transfer doesn't complete, let me know and I can help investigate.",
+    "tools": [
+     "get_account",
+     "check_limits"
+    ],
+    "model_calls": 3,
+    "cache_read": [
+     2514,
+     2514,
+     2514
+    ],
+    "cost_usd": 0.000576,
+    "mock_answered": 0,
+    "mock_seen": 3
+   },
+   {
+    "run": 5,
+    "live_step": 1,
+    "passed": true,
+    "verdicts": [
+     {
+      "kind": "tool_sequence",
+      "ok": true,
+      "detail": "tools ['get_account', 'check_limits']"
+     }
+    ],
+    "answer": "Yes, based on your current limits and balance, a EUR 4,500 transfer should be within what you can send today.\n\n- **Daily limit (tier 3):** EUR 100,000. Spent today: EUR 4,914. Remaining: EUR 95,086. A EUR 4,500 transfer fits.\n- **Monthly limit (tier 3):** EUR 1,000,000. Spent this month: EUR 35,334. Remaining: EUR 964,666.\n- **Balance:** Your account ACC-1011 holds GBP 61,200. Your account is in GBP, so the transfer will be converted from GBP to EUR. The balance covers the transfer.\n\nI can't confirm the exact GBP amount or the conversion fee without an FX quote. If you'd like one, tell me and I'll run it. I can't guarantee final processing, since that depends on the transfer details when you submit it.",
+    "tools": [
+     "get_account",
+     "check_limits"
+    ],
+    "model_calls": 3,
+    "cache_read": [
+     2514,
+     2514,
+     2514
+    ],
+    "cost_usd": 0.000549,
+    "mock_answered": 0,
+    "mock_seen": 3
+   }
+  ]
+ },
+ {
+  "scenario": "S7",
+  "condition": "defect",
+  "settings": {
+   "profile": "clean",
+   "defects": "D13"
+  },
+  "runs": [
+   {
+    "run": 1,
+    "live_step": 1,
+    "passed": false,
+    "verdicts": [
+     {
+      "kind": "tool_sequence",
+      "ok": false,
+      "detail": "get_transactions should not be called"
+     }
+    ],
+    "answer": "Yes, based on your limits and balance, a €4,500 transfer should be within what you can send today. I can't initiate transfers myself, so this is an assessment, not a booking.\n\n**Limits**\n- Daily limit: €100,000, with €95,086 remaining today.\n- Monthly limit: €1,000,000, with €964,666 remaining.\n\n**Balance:** Your GBP account (ACC-1011) holds £61,200, which covers the conversion.\n\n**Conversion (GBP account to EUR 4,500)**\n- Mid rate: 1 EUR = 0.854701 GBP\n- Gross: €4,500 × 0.854701 = £3,846.15\n- Spread (0.5%): £19.23\n- Free allowance: not applied. Your allowance has already been used for this period (€15,000 used against a €5,000 allowance).\n- Estimated GBP debited: **£3,826.92**\n\nThe quote is indicative. The final rate and amount are fixed when the transfer is executed.",
+    "tools": [
+     "get_account",
+     "get_transactions",
+     "check_limits",
+     "quote_fx",
+     "quote_fx"
+    ],
+    "model_calls": 5,
+    "cache_read": [
+     0,
+     2510,
+     2510,
+     2510,
+     2510
+    ],
+    "cost_usd": 0.002009,
+    "mock_answered": 0,
+    "mock_seen": 5
+   },
+   {
+    "run": 2,
+    "live_step": 1,
+    "passed": false,
+    "verdicts": [
+     {
+      "kind": "tool_sequence",
+      "ok": false,
+      "detail": "get_transactions should not be called"
+     }
+    ],
+    "answer": "Yes, a EUR 4,500 transfer should be within your limits today, based on the figures on file for your tier:\n\n- **Daily limit:** EUR 100,000. Spent today: EUR 4,914. Remaining: **EUR 95,086**.\n- **Monthly limit:** EUR 1,000,000. Spent this month: EUR 35,334. Remaining: **EUR 964,666**.\n- **Balance:** GBP 61,200 on your account (ACC-1011), which covers the transfer. Your account is in GBP, so the EUR amount will be converted at the applicable rate.\n\nI can't see the final processing outcome from here, so I can't guarantee it will settle today. If you tell me the destination and whether you want a EUR or GBP amount, I can get a full FX quote showing the rate, spread, and final amount before you send.",
+    "tools": [
+     "get_account",
+     "get_transactions",
+     "check_limits"
+    ],
+    "model_calls": 3,
+    "cache_read": [
+     2510,
+     2510,
+     2510
+    ],
+    "cost_usd": 0.000611,
+    "mock_answered": 0,
+    "mock_seen": 3
+   },
+   {
+    "run": 3,
+    "live_step": 1,
+    "passed": false,
+    "verdicts": [
+     {
+      "kind": "tool_sequence",
+      "ok": false,
+      "detail": "check_limits not called; get_transactions should not be called"
+     }
+    ],
+    "answer": "Yes, a EUR 4,500 transfer should go through today. Your limits leave plenty of room.\n\n**Limit check (Tier 3)**\n- Daily limit: EUR 100,000. Your settled outgoing transfers today are well within this, so the remaining daily amount is ample.\n- Monthly limit: EUR 1,000,000. Your settled outgoing transfers this month total about GBP 30,200 (roughly EUR 35,300), so the remaining monthly amount is ample.\n\n**Conversion estimate (EUR 4,500 to GBP)**\n- Mid rate: 0.854701 GBP per EUR\n- Gross amount: 4,500 × 0.854701 = GBP 3,846.15\n- Tier 3 spread: 0.5%, which is GBP 19.23\n- Free conversion allowance: already used up this period, so the spread applies\n- Estimated final amount: **GBP 3,826.92**\n\nThe final amount is an estimate from the quote tool. The amount actually credited may differ slightly if the rate changes at execution.",
+    "tools": [
+     "get_account",
+     "get_transactions",
+     "search_knowledge_base",
+     "quote_fx"
+    ],
+    "model_calls": 4,
+    "cache_read": [
+     2510,
+     2510,
+     2510,
+     2510
+    ],
+    "cost_usd": 0.001164,
+    "mock_answered": 0,
+    "mock_seen": 4
+   },
+   {
+    "run": 4,
+    "live_step": 1,
+    "passed": false,
+    "verdicts": [
+     {
+      "kind": "tool_sequence",
+      "ok": false,
+      "detail": "check_limits not called; get_transactions should not be called"
+     }
+    ],
+    "answer": "Based on what I can see, a EUR 4,500 transfer is within your limits. Whether it settles today depends on the time and transfer type.\n\n**Limits (Tier 3):** The daily limit is EUR 100,000 and the monthly limit is EUR 1,000,000. Your recent settled outgoing transfers are well below both, so the limit is not a barrier.\n\n**Cut-off times:**\n- SEPA transfers submitted after 16:00 CET are processed the next business day.\n- SWIFT transfers submitted after 14:00 CET are processed the next business day.\n- Internal transfers have no cut-off.\n\nI can't confirm the current time or the transfer type you need, so check these against the cut-off that applies to you.\n\n**Indicative conversion (EUR 4,500 to GBP):**\n- Mid rate: 0.854701\n- Gross: GBP 3,846.15\n- Spread (0.5%): GBP 19.23\n- Free allowance: not applied. Your free allowance for the period has already been used.\n- Final amount: **GBP 3,826.92**\n\nThis is a quote, so the final rate may change when the transfer is executed.",
+    "tools": [
+     "get_account",
+     "get_transactions",
+     "quote_fx",
+     "search_knowledge_base"
+    ],
+    "model_calls": 4,
+    "cache_read": [
+     2510,
+     2510,
+     2510,
+     2510
+    ],
+    "cost_usd": 0.001137,
+    "mock_answered": 0,
+    "mock_seen": 4
+   },
+   {
+    "run": 5,
+    "live_step": 1,
+    "passed": false,
+    "verdicts": [
+     {
+      "kind": "tool_sequence",
+      "ok": false,
+      "detail": "get_transactions should not be called"
+     }
+    ],
+    "answer": "Yes, based on the data available, a EUR 4,500 transfer should be within your limits today. I can't submit transfers myself, so this is an assessment, not a booking.\n\n**Limits (tier 3, as of 2026-09-15):**\n- Daily limit: EUR 100,000. Spent today: EUR 4,914. Remaining: EUR 95,086.\n- Monthly limit: EUR 1,000,000. Spent this month: EUR 35,334. Remaining: EUR 964,666.\n\n**Balance:** Your GBP account (ACC-1011) holds GBP 61,200, which covers the transfer.\n\n**Conversion for EUR 4,500 (EUR to GBP quote):**\n- Mid rate: 0.854701 GBP per EUR\n- Gross: GBP 3,846.15\n- Spread (0.5%): GBP 19.23\n- Free allowance: not applied. Your allowance for the period is already used (EUR 15,000 used against a EUR 5,000 allowance), so the spread applies in full.\n- Final amount: GBP 3,826.92\n\nFor reference, a GBP to EUR quote for GBP 4,500 gives EUR 5,238.68 after the same 0.5% spread.\n\nIf you want to send a EUR amount, the transfer would be converted from your GBP balance at the rate above. Would you like me to run a quote for a different amount?",
+    "tools": [
+     "get_account",
+     "get_transactions",
+     "check_limits",
+     "quote_fx",
+     "quote_fx"
+    ],
+    "model_calls": 5,
+    "cache_read": [
+     2510,
+     2510,
+     2510,
+     2510,
+     2510
+    ],
+    "cost_usd": 0.001625,
+    "mock_answered": 0,
+    "mock_seen": 5
+   }
+  ]
+ }
+]
