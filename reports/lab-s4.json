@@ -1,0 +1,33 @@
+[
+ {
+  "scenario": "S4",
+  "condition": "baseline",
+  "settings": {
+   "profile": "clean",
+   "defects": ""
+  },
+  "runs": [
+   {
+    "run": 1,
+    "live_step": 2,
+    "passed": true,
+    "verdicts": [
+     {
+      "kind": "state_row",
+      "ok": true,
+      "detail": "rows [{'transaction_id': 'TX-0401', 'account_id': 'ACC-1005', 'amount': 240.0, 'currency': 'EUR'}]"
+     }
+    ],
+    "answer": "I haven't opened it again. The dispute for TX-0401 was created successfully (dispute ID 1, status: open), and a second submission would create a duplicate dispute on the same transaction.\n\nIf you want independent confirmation, I can escalate to a human agent, who can check the dispute record directly. Is there anything else you need?",
+    "tools": [],
+    "model_calls": 1,
+    "cache_read": [
+     2514
+    ],
+    "cost_usd": 0.000242,
+    "mock_answered": 3,
+    "mock_seen": 4
+   }
+  ]
+ }
+]
